@@ -5,32 +5,16 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-    
+  
 jobs:
-
-  lint:
+  test:
+    name: Run Unit Tests
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-
-    - name: Set up JDK 11
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-
-    - uses: actions/cache@v3
-      with:
-          path: ~/.gradle
-          key: gradle-${{ hashFiles('gradle-checksums.txt') }}-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
-          restore-keys: |
-            gradle-${{ hashFiles('gradle-checksums.txt') }}-
-    - name: lintDebug
-      run: ./gradlew lint
-
-    - uses: actions/upload-artifact@v3
-      with:
-          name: android-lint-report
-          path: ~/**/build/reports/lint-results*.html
+      - uses: actions/checkout@v3
+      - name: set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11
+      - name: Unit tests
+        run: bash ./gradlew test --stacktrace
