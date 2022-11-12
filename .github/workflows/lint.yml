@@ -21,6 +21,16 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
 
+    - uses: actions/cache@v3
+      with:
+          path: ~/.gradle
+          key: gradle-${{ hashFiles('gradle-checksums.txt') }}-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+          restore-keys: |
+            gradle-${{ hashFiles('gradle-checksums.txt') }}-
+    - name: lintDebug
+      run: ./gradlew lint
 
-    - name: Lint
-      run: ./gradlew ktlintCheck
+    - uses: actions/upload-artifact@v3
+      with:
+          name: android-lint-report
+          path: ~/**/build/reports/lint-results*.html
