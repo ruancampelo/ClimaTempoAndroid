@@ -7,8 +7,7 @@ on:
 jobs:
   Unit-Test:
     runs-on: ubuntu-latest
-     needs: Build
-
+    
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK
