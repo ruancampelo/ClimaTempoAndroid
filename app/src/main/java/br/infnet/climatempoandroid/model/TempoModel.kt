@@ -16,5 +16,4 @@ data class TempoModel(
     val visibility: Int,
     val weather: List<Tempo>,
     val wind: Vento
-
 )
