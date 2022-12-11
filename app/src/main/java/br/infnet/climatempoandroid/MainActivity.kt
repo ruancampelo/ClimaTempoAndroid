@@ -65,6 +65,7 @@ class MainActivity : AppCompatActivity() {
         getCurrentLocation()
         MobileAds.initialize(this) {}
         val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
 
     }
 
@@ -179,68 +180,9 @@ class MainActivity : AppCompatActivity() {
             tvDescricao.text=body.weather[0].description
             tvMax.text="Max: "+k2c(body?.main?.temp_max!!)+"°C"
             tvMin.text="Min: "+k2c(body?.main?.temp_min!!)+"°C"
-            tvSensacaoTermica.text= ""+k2c(body?.main.feels_like)+"°C"
-            tvHumidade.text = body.main.humidity.toString()+"%"
-            tvVento.text = body.wind.speed.toString()+"m/s"
-            /*executor.execute {
-
-                val lat = currentLocation.latitude.toString()
-                val lon = currentLocation.longitude.toString()
-                val response2:String? = try{
-                    URL(
-                        "https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=71fe2ae8ebc63936eb0be1d18020853a&units=metric")
-                        .readText(Charsets.UTF_8)
-                } catch (e: Exception){
-                    Log.d("TAG", "api not working")
-                    null
-                }
-                handler.post {
-                    try{
-                        val jsonObject2 = JSONObject(response2)
-                        val locale = Locale("pt", "BR")
-                        val date1: Long = jsonObject2.getJSONArray("list").getJSONObject(0).getLong("dt")
-                        val day1 = jsonObject2.getJSONArray("list").getJSONObject(0).getJSONObject("main")
-                        val temp1: String = day1.getLong("temp").toString() + "°C"
-                        val date = SimpleDateFormat("EEE", locale).format(Date(date1 * 1000))
-                        forecastTemp1.text = temp1
-                        forecastDate1.text = date
-
-                        var temps = mutableListOf<String>()
-                        var days = mutableListOf<String>()
-                        var cur = 1
-                        val max = 5
-                        var i = 1
-                        var prevDate = date
-
-                        while (cur < max) {
-                            val dt: Long = jsonObject2.getJSONArray("list").getJSONObject(i).getLong("dt")
-                            val currDate = SimpleDateFormat("EEE", locale).format(Date(dt * 1000))
-                            if(prevDate != currDate){
-                                var currTemp: String = jsonObject2.getJSONArray("list").getJSONObject(i).getJSONObject("main").getLong("temp").toString() + "°C"
-                                temps.add(currTemp)
-                                days.add(currDate)
-                                prevDate = currDate
-                                cur++
-                            }
-                            i++
-                        }
-                        forecastTemp2.text = temps[0]
-                        forecastDate2.text = days[0]
-                        forecastTemp3.text = temps[1]
-                        forecastDate3.text = days[1]
-                        forecastTemp4.text = temps[2]
-                        forecastDate4.text = days[2]
-                        forecastTemp5.text = temps[3]
-                        forecastDate5.text = days[3]
-
-                    }
-
-                    catch (e: Exception){
-
-                    }
-                }
-            }*/
-
+            tvSensacaoNumero.text= ""+k2c(body?.main.feels_like)+"°C"
+            tvHumidadeNumero.text = body.main.humidity.toString()+"%"
+            tvVentoNumero.text = body.wind.speed.toString()+"m/s"
         }
         updateUI(body.weather[0].id)
     }
