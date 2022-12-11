@@ -134,10 +134,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Senação termica"
+                android:text="Sensação termica"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="10sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -171,7 +171,7 @@
                 android:text="Humidade"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="10sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -202,10 +202,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Sensação termica"
+                android:text="Velocidade vento"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="10sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
     </LinearLayout>
