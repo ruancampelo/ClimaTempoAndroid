@@ -65,14 +65,8 @@ class MainActivity : AppCompatActivity() {
         getCurrentLocation()
         MobileAds.initialize(this) {}
         val adRequest = AdRequest.Builder().build()
-        binding.adView.loadAd(adRequest)
-        binding.adView3.loadAd(adRequest)
-
-
 
     }
-
-
 
 
     private fun fetchCurrentLocationWeather(latitude: String, longitude: String) {
@@ -185,15 +179,10 @@ class MainActivity : AppCompatActivity() {
             tvDescricao.text=body.weather[0].description
             tvMax.text="Max: "+k2c(body?.main?.temp_max!!)+"°C"
             tvMin.text="Min: "+k2c(body?.main?.temp_min!!)+"°C"
-            tvFeelslike.text= ""+k2c(body?.main.feels_like)+"°C"
+            tvSensacaoTermica.text= ""+k2c(body?.main.feels_like)+"°C"
             tvHumidade.text = body.main.humidity.toString()+"%"
-            tvPressure.text = body.main.pressure.toString()
             tvVento.text = body.wind.speed.toString()+"m/s"
-            tvNascerSol.text = ts2td(body.sys.sunrise.toLong())
-            tvPorDoSol.text = ts2td(body.sys.sunset.toLong())
-            tvNivelMar.text = body.main.sea_level.toString()
-
-            executor.execute {
+            /*executor.execute {
 
                 val lat = currentLocation.latitude.toString()
                 val lon = currentLocation.longitude.toString()
@@ -250,7 +239,7 @@ class MainActivity : AppCompatActivity() {
 
                     }
                 }
-            }
+            }*/
 
         }
         updateUI(body.weather[0].id)

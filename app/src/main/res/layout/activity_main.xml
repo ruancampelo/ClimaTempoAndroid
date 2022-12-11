@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,589 +9,207 @@
     tools:context=".MainActivity"
     android:id="@+id/mainlayout">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginVertical="10dp"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="10dp">
 
-    <TextView
-        android:id="@+id/tv_cidade"
-        android:layout_width="315dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="24dp"
-        android:text="Cidade"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="35sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_Cidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cidade"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="76dp"
+            tools:layout_editor_absoluteY="1dp" />
 
-    <ImageView
-        android:id="@+id/iv_tempo"
-        android:layout_width="108dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_cidade"
-        app:srcCompat="@drawable/ic_cloud" />
+        <ImageView
+            android:id="@+id/iv_tempo"
+            android:layout_width="139dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="108dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_Cidade"
+            app:srcCompat="@drawable/ic_cloud" />
 
-    <TextView
-        android:id="@+id/tv_temperatura"
-        android:layout_width="132dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="88dp"
-        android:text="35°C"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="35sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_cidade" />
+        <TextView
+            android:id="@+id/tv_temperatura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="4dp"
+            android:text="25°C"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_tempo" />
 
-    <TextView
-        android:id="@+id/tv_descricao"
-        android:layout_width="215dp"
-        android:layout_height="37dp"
-        android:text="Tempo"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_temperatura" />
+        <TextView
+            android:id="@+id/tv_descricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="12dp"
+            android:text="Chuvoso"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_temperatura" />
 
-    <TextView
-        android:id="@+id/tv_Max"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
-        android:text="28"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_Max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="21°C"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_descricao" />
 
-    <TextView
-        android:id="@+id/tv_Min"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
-        android:layout_marginEnd="16dp"
-        android:text="12"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_Max"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_Min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:text="18°C"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_descricao" />
 
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="60dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="332dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_tempature_foreground" />
-
-    <TextView
-        android:id="@+id/tv_feelslike"
-        android:layout_width="47dp"
-        android:layout_height="23dp"
-        android:layout_marginTop="380dp"
-        android:text="12"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_sensacao_termina"
-        android:layout_width="64dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="404dp"
-        android:text="Sencação Termina"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/iv_humidade"
-        android:layout_width="60dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="332dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.347"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_humidity_foreground" />
-
-    <TextView
-        android:id="@+id/tv_humidadetext"
-        android:layout_width="64dp"
-        android:layout_height="16dp"
-        android:layout_marginTop="404dp"
-        android:text="Humidade"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.351"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/iv_detahes"
-        android:layout_width="381dp"
-        android:layout_height="231dp"
-        android:layout_marginTop="240dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_cidade"
-        app:srcCompat="@drawable/retangle" />
-
-    <TextView
-        android:id="@+id/tv_humidade"
-        android:layout_width="45dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="380dp"
-        android:text="12%"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="67dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="332dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.595"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_pressure_foreground" />
-
-    <TextView
-        android:id="@+id/tv_pressure"
-        android:layout_width="47dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="380dp"
-        android:text="10000"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.59"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_vento"
-        android:layout_width="62dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="380dp"
-        android:text="4.7m/s"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.866"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_pressuretext"
-        android:layout_width="67dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="404dp"
-        android:text="Pressão Atmosferica"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.595"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_velocidade_vento"
-        android:layout_width="67dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="404dp"
-        android:text="Velocidade Vento"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.869"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="64dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="332dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.87"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_wind_foreground" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="440dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_sunrise_foreground" />
-
-    <TextView
-        android:id="@+id/tv_nascer_sol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="492dp"
-        android:text="05:35:00"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_por_do_sol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="492dp"
-        android:text="05:35:00"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.353"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_nivel_mar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="492dp"
-        android:text="0"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.583"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_sunrisetext"
-        android:layout_width="62dp"
-        android:layout_height="15dp"
-        android:layout_marginTop="520dp"
-        android:text="Nascer do Sol"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_sunsettext"
-        android:layout_width="66dp"
-        android:layout_height="14dp"
-        android:layout_marginTop="520dp"
-        android:text="Por do Sol"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.353"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_sea_level"
-        android:layout_width="66dp"
-        android:layout_height="14dp"
-        android:layout_marginTop="520dp"
-            android:text="Nivel do Mar"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.597"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="440dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.353"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_sunset_foreground" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="440dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.594"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_sealevel_foreground" />
-
-    <HorizontalScrollView
-        android:id="@+id/forecastScrollView"
-        android:layout_width="387dp"
-        android:layout_height="101dp"
-        android:layout_marginTop="680dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.681"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ImageView
+            android:id="@+id/imageView13"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="135dp"
+            app:srcCompat="@drawable/retangle"
+            tools:layout_editor_absoluteX="-25dp"
+            tools:layout_editor_absoluteY="295dp" />
 
-            <ImageView
-                android:id="@+id/forecast_container1"
-                android:layout_width="80dp"
-                android:layout_height="90dp"
-                android:src="@drawable/retangle"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="121dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+            tools:layout_editor_absoluteX="0dp">
 
-            <TextView
-                android:id="@+id/forecast_date1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Dom"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@id/forecast_container1"
-                app:layout_constraintStart_toStartOf="@id/forecast_container1"
-                app:layout_constraintTop_toTopOf="@id/forecast_container1" />
+            <LinearLayout
+                android:id="@+id/sensacao"
+                android:layout_width="92dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/forecast_temp1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="35°C"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/forecast_container1"
-                app:layout_constraintStart_toStartOf="@id/forecast_container1"
-                app:layout_constraintTop_toBottomOf="@id/forecast_date1" />
+                <ImageView
+                    android:id="@+id/imageView18"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    app:srcCompat="@mipmap/ic_launcher_round_foreground" />
 
-            <ImageView
-                android:id="@+id/forecast_container2"
-                android:layout_width="80dp"
-                android:layout_height="90dp"
-                android:layout_marginStart="15dp"
-                android:src="@drawable/retangle"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/forecast_container1"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/tv_sensacao_termica"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="39°C"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
 
-            <TextView
-                android:id="@+id/forecast_date2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Seg"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@id/forecast_container2"
-                app:layout_constraintStart_toStartOf="@id/forecast_container2"
-                app:layout_constraintTop_toTopOf="@id/forecast_container2" />
+                <TextView
+                    android:id="@+id/tv_sensacao_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="Senação termica"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/forecast_temp2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="28°C"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/forecast_container2"
-                app:layout_constraintStart_toStartOf="@id/forecast_container2"
-                app:layout_constraintTop_toBottomOf="@id/forecast_date2" />
+            <LinearLayout
+                android:id="@+id/Humidade"
+                android:layout_width="92dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/forecast_container3"
-                android:layout_width="80dp"
-                android:layout_height="90dp"
-                android:layout_marginStart="15dp"
-                android:src="@drawable/retangle"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/forecast_container2"
-                app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/imageView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    app:srcCompat="@mipmap/ic_humidity_foreground" />
 
-            <TextView
-                android:id="@+id/forecast_date3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Ter"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@id/forecast_container3"
-                app:layout_constraintStart_toStartOf="@id/forecast_container3"
-                app:layout_constraintTop_toTopOf="@id/forecast_container3" />
+                <TextView
+                    android:id="@+id/tv_humidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="68%"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
 
-            <TextView
-                android:id="@+id/forecast_temp3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="40°C"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/forecast_container3"
-                app:layout_constraintStart_toStartOf="@id/forecast_container3"
-                app:layout_constraintTop_toBottomOf="@id/forecast_date3" />
+                <TextView
+                    android:id="@+id/tv_humidade_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="Humidade"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
 
-            <ImageView
-                android:id="@+id/forecast_container4"
-                android:layout_width="80dp"
-                android:layout_height="90dp"
-                android:layout_marginStart="15dp"
-                android:src="@drawable/retangle"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/forecast_container3"
-                app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:id="@+id/Ventos"
+                android:layout_width="92dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/forecast_date4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Qua"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@id/forecast_container4"
-                app:layout_constraintStart_toStartOf="@id/forecast_container4"
-                app:layout_constraintTop_toTopOf="@id/forecast_container4" />
+                <ImageView
+                    android:id="@+id/imageView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    app:srcCompat="@mipmap/ic_wind_foreground" />
 
-            <TextView
-                android:id="@+id/forecast_temp4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="35°C"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/forecast_container4"
-                app:layout_constraintStart_toStartOf="@id/forecast_container4"
-                app:layout_constraintTop_toBottomOf="@id/forecast_date4" />
+                <TextView
+                    android:id="@+id/tv_vento"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="3.7m/s"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/tv_vento_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="Vento"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+        </LinearLayout>
 
 
-            <ImageView
-                android:id="@+id/forecast_container5"
-                android:layout_width="80dp"
-                android:layout_height="90dp"
-                android:layout_marginStart="15dp"
-                android:src="@drawable/retangle"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/forecast_container4"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/forecast_date5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Qui"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@id/forecast_container5"
-                app:layout_constraintStart_toStartOf="@id/forecast_container5"
-                app:layout_constraintTop_toTopOf="@id/forecast_container5" />
-
-            <TextView
-                android:id="@+id/forecast_temp5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="23°C"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@id/forecast_container5"
-                app:layout_constraintStart_toStartOf="@id/forecast_container5"
-                app:layout_constraintTop_toBottomOf="@id/forecast_date5" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </HorizontalScrollView>
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="318dp"
-        android:layout_height="48dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </com.google.android.gms.ads.AdView>
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView3"
-        android:layout_width="316dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="568dp"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_proximos_dias"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="632dp"
-        android:text="Proximos dias:"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
