@@ -106,8 +106,8 @@
             android:layout_width="match_parent"
             android:layout_height="121dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView13"
-            tools:layout_editor_absoluteX="0dp">
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="302dp">
 
             <LinearLayout
                 android:id="@+id/sensacao"
@@ -129,7 +129,7 @@
                     android:layout_weight="1"
                     android:text="39°C"
                     android:textAlignment="center"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"/>
 
                 <TextView
                     android:id="@+id/tv_sensacao_text"
@@ -138,10 +138,9 @@
                     android:layout_weight="1"
                     android:text="Senação termica"
                     android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:textColor="@color/white"/>
             </LinearLayout>
-
             <LinearLayout
                 android:id="@+id/Humidade"
                 android:layout_width="92dp"
@@ -153,16 +152,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="4"
-                    app:srcCompat="@mipmap/ic_humidity_foreground" />
+                    app:srcCompat="@mipmap/ic_humidity_round" />
 
                 <TextView
                     android:id="@+id/tv_humidade"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:text="68%"
+                    android:text="68%°C"
                     android:textAlignment="center"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"/>
 
                 <TextView
                     android:id="@+id/tv_humidade_text"
@@ -171,41 +170,8 @@
                     android:layout_weight="1"
                     android:text="Humidade"
                     android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="10sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/Ventos"
-                android:layout_width="92dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imageView20"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="4"
-                    app:srcCompat="@mipmap/ic_wind_foreground" />
-
-                <TextView
-                    android:id="@+id/tv_vento"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:text="3.7m/s"
-                    android:textAlignment="center"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/tv_vento_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:text="Vento"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:textColor="@color/white"/>
             </LinearLayout>
 
         </LinearLayout>
