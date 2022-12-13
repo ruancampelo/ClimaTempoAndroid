@@ -70,7 +70,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     private fun fetchCurrentLocationWeather(latitude: String, longitude: String) {
 
         ApiUtil.getApiInterface()?.getCurrentWeatherData(latitude,longitude,apiKey,lang,metrics)
