@@ -53,6 +53,8 @@ class MainActivity : AppCompatActivity() {
 
     private val apiKey="71fe2ae8ebc63936eb0be1d18020853a"
     private val lang="pt_br"
+    private val metrics="metric"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,7 +74,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun fetchCurrentLocationWeather(latitude: String, longitude: String) {
 
-        ApiUtil.getApiInterface()?.getCurrentWeatherData(latitude,longitude,apiKey,lang)
+        ApiUtil.getApiInterface()?.getCurrentWeatherData(latitude,longitude,apiKey,lang,metrics)
             ?.enqueue(object : Callback<TempoModel> {
                 @RequiresApi(Build.VERSION_CODES.O)
                 override fun onResponse(call: Call<TempoModel>, response: Response<TempoModel>) {
@@ -170,41 +172,19 @@ class MainActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun setData(body:TempoModel){
-        val executor = Executors.newSingleThreadExecutor()
-        val handler = Handler(Looper.getMainLooper())
 
         binding.apply {
 
             tvCidade.text = body.name
-            tvTemperatura.text = ""+k2c(body?.main?.temp!!)+"°C"
+            tvTemperatura.text = body.main.temp.toString()+"°C"
             tvDescricao.text=body.weather[0].description
-            tvMax.text="Max: "+k2c(body?.main?.temp_max!!)+"°C"
-            tvMin.text="Min: "+k2c(body?.main?.temp_min!!)+"°C"
-            tvSensacaoNumero.text= ""+k2c(body?.main.feels_like)+"°C"
+            tvMax.text="Max: "+body.main.temp_max.toString()+"°C"
+            tvMin.text="Min: "+body.main.temp_min.toString()+"°C"
+            tvSensacaoNumero.text= ""+body.main.feels_like.toString()+"°C"
             tvHumidadeNumero.text = body.main.humidity.toString()+"%"
             tvVentoNumero.text = body.wind.speed.toString()+"m/s"
         }
         updateUI(body.weather[0].id)
-    }
-
-    private fun k2c(t:Double):Double{
-
-        var intTemp=t
-
-        intTemp=intTemp.minus(273)
-
-        return intTemp.toBigDecimal().setScale(1,RoundingMode.UP).toDouble()
-    }
-
-
-    private fun ts2td(ts:Long):String{
-
-        val localTime=ts.let {
-            Instant.ofEpochSecond(it)
-                .atZone(ZoneId.systemDefault())
-                .toLocalTime()
-        }
-        return localTime.toString()
     }
 
 

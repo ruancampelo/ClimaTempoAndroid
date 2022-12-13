@@ -12,7 +12,8 @@ interface ApiInteface {
         @Query("lat") lat:String,
         @Query("lon") lon:String,
         @Query("APPID") appid:String,
-        @Query("lang") lang:String
+        @Query("lang") lang:String,
+        @Query("units") units: String
     ): Call<TempoModel>
 
     @GET("weather")
