@@ -55,7 +55,6 @@ class MainActivity : AppCompatActivity() {
     private val lang="pt_br"
     private val metrics="metric"
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
