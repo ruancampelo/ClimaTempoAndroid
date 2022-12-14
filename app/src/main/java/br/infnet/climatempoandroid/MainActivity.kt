@@ -170,8 +170,6 @@ class MainActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun setData(body:TempoModel){
-        val executor = Executors.newSingleThreadExecutor()
-        val handler = Handler(Looper.getMainLooper())
 
         binding.apply {
 
@@ -195,18 +193,6 @@ class MainActivity : AppCompatActivity() {
 
         return intTemp.toBigDecimal().setScale(1,RoundingMode.UP).toDouble()
     }
-
-
-    private fun ts2td(ts:Long):String{
-
-        val localTime=ts.let {
-            Instant.ofEpochSecond(it)
-                .atZone(ZoneId.systemDefault())
-                .toLocalTime()
-        }
-        return localTime.toString()
-    }
-
 
     private fun updateUI(id: Int) {
 
